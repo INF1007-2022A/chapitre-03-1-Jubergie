@@ -4,32 +4,36 @@
 
 import math
 
-def square_root(a: float) -> float:
-    return 0.0
+def square_root(number) -> float:
+
+    return math.sqrt(number)
 
 
-def square(a: float) -> float:
-    return 0.0
+def square(number) -> float:
+    return math.pow(number, 2)
 
 
-def average(a: float, b: float, c: float) -> float:
-    return 0.0
+def average(number1, number2, number3) -> float:
+    return sum([number1,number2,number3])/3
 
 
 def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float:
-    return 0.0
+    return math.radians(angle_degs+(angle_mins+(angle_secs/60))/60)
 
 
-def to_degrees(angle_rads: float) -> tuple:
-    return 0.0, 0.0, 0.0
+def to_degrees(angle_rads) -> float:
+    angle_deg = math.degrees(angle_rads)
+    minutes = (angle_deg - math.floor(angle_deg))*60
+    secondes = (minutes - math.floor(minutes))*60
+    return math.floor(angle_deg), math.floor(minutes), math.floor(secondes)
 
 
 def to_celsius(temperature: float) -> float:
-    return 0.0
+    return (temperature - 32)/1.8
 
 
 def to_farenheit(temperature: float) -> float:
-    return 0.0
+    return (temperature + 32)/1.8
 
 
 def main() -> None:
